@@ -1,63 +1,43 @@
-# Statistical-supervised-meta-ensemble-algorithm-for-medical-record-linkage
->📋  A template README.md for code accompanying a Machine Learning paper
+## Statistical-supervised-meta-ensemble-algorithm-for-medical-record-linkage
 
-# My Paper Title
-
-This repository is the official implementation of [My Paper Title](https://arxiv.org/abs/2030.12345). 
-
->📋  Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
+This repository is the official implementation of [Statistical-supervised-meta-ensemble-algorithm-for-medical-record-linkage](https://github.com/ePBRN/Medical-Record-Linkage-Ensemble). 
 
 ## Requirements
 
 To install requirements:
 
 ```setup
-pip install -r requirements.txt
+pip install numpy
+pip install pandas
+pip install sklearn
+pip install recordlinkage
+pip install matplotlib
 ```
 
->📋  Describe how to set up the environment, e.g. pip/conda/docker commands, download datasets, etc...
++ Download the github repository and use Python 3.6 or higher wto run the code. All the necessary datasets are in the current repository.
 
-## Training
+## Training and Evaluation
 
-To train the model(s) in the paper, run this command:
+To train and evaluate the model(s) in the paper:
 
-```train
-python train.py --input-data <path_to_data> --alpha 10 --beta 20
-```
++ run `FEBRL_UNSW_Linkage.ipynb` to reproduce results for FEBRL dataset.
 
->📋  Describe how to train the models, with example commands on how to train the models in your paper, including the full training procedure and appropriate hyperparameters.
-
-## Evaluation
-
-To evaluate my model on ImageNet, run:
-
-```eval
-python eval.py --model-file mymodel.pth --benchmark imagenet
-```
-
->📋  Describe how to evaluate the trained models on benchmarks reported in the paper, give commands that produce the results (section below).
-
-## Pre-trained Models
-
-You can download pretrained models here:
-
-- [My awesome model](https://drive.google.com/mymodel.pth) trained on ImageNet using parameters x,y,z. 
-
->📋  Give a link to where/how the pretrained models can be downloaded and how they were trained (if applicable).  Alternatively you can have an additional column in your results table with a link to the models.
++ run `ePBRN_UNSW_Linkage.ipynb` to reproduce results for ePBRN dataset.
 
 ## Results
 
-Our model achieves the following performance on :
+Our model achieves the following performance on medical record linkage:
 
-### [Image Classification on ImageNet](https://paperswithcode.com/sota/image-classification-on-imagenet)
+### FEBRL dataset
 
-| Model name         | Top 1 Accuracy  | Top 5 Accuracy |
-| ------------------ |---------------- | -------------- |
-| My awesome model   |     85%         |      95%       |
+| Model name         | precision(%)  | recall(%) | f1-score(%) | false counts |
+| ------------------ |---------------- | -------------- | -------------- | -------------- |
+| Support Vector Machine                |     94.28         |      99.73       |      96.93        |      309       |
+| Support Vector Machine with Bagging   |     94.94         |      99.73       |      97.28        |      273      |
+| Neural Network                        |     93.25         |      99.43       |      96.24        |      387       |
+| Neural Network with Bagging           |     93.14         |      99.37       |      96.15       |      389       |
+| Linear Regression                     |     93.01         |      99.57       |      96.18       |      380       |
+| Linear Regression with Bagging        |     93.03         |      99.51       |      96.16       |      389       |
+| Stacking & Bagging                    |     96.54         |      99.22       |      97.86       |      212       |
 
->📋  Include a table of results from your paper, and link back to the leaderboard for clarity and context. If your main result is a figure, include that figure and link to the command or notebook to reproduce it. 
-
-
-## Contributing
-
->📋  Pick a licence and describe how to contribute to your code repository. 
++ check out our report to see more results
